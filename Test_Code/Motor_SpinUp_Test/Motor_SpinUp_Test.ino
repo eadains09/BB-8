@@ -3,7 +3,6 @@
 #include <Wire.h>
 #include <Adafruit_MotorShield.h>
 //#include <Servo.h>
-//#include "utility/Adafruit_MS_PWMServoDriver.h"
 
 Adafruit_MotorShield AFMS = Adafruit_MotorShield(); 
 
@@ -52,7 +51,7 @@ void loop() {
     motorL->run(BACKWARD);  
 
   Serial.println("start");
-  for (i=0; i<25; i++) {
+  for (i=0; i<255; i++) {
     motorR->setSpeed(i);
     motorL->setSpeed(i);  
     delay(100);
@@ -66,7 +65,7 @@ void loop() {
    motorR->run(BACKWARD);
    motorL->run(FORWARD);  
 
-  for (i=25; i>0; i--) {
+  for (i=255; i>0; i--) {
     motorR->setSpeed(i);
     motorL->setSpeed(i);  
     delay(100);
